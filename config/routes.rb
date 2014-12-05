@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'check_in/index'
+
+  resources :participants
+
   resources :locations
 
   resources :events
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get '/:tag' => 'check_in#index'
+  post '/success' => 'check_in#success'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

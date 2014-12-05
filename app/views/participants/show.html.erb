@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+
+  <strong>Event:</strong>
+
+  <%= @participant.event_id %>
+
+</p>
+
+
+
+<p>
+
+  <strong>Email:</strong>
+
+  <%= @participant.email %>
+
+</p>
+
+
+
+<p>
+
+  <strong>Locations left:</strong>
+
+  <ul>
+
+    <% @participant.locations.where(event_id: @participant.event_id).each do |l| %>
+
+      <% if ! @participant.visited_locations.include? l.id %>
+
+        <li><%= l.name %></li>
+
+      <% end %>
+
+    <% end %>
+
+  </ul>
+
+</p>
+
+
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+
+<%= link_to 'Back', edit_event_path(@participant.event_id) %>

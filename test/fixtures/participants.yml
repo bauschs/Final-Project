@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+
+one:
+
+  email: MyString
+
+  event_id: 
+
+
+
+two:
+
+  email: MyString
+
+  event_id: 
